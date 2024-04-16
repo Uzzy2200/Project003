@@ -1,0 +1,14 @@
+C:\Users\Tec\source\repos\Project003\Project002Repository\bin\Debug\net6.0\Project002Repository.deps.json
+C:\Users\Tec\source\repos\Project003\Project002Repository\bin\Debug\net6.0\Project002Repository.runtimeconfig.json
+C:\Users\Tec\source\repos\Project003\Project002Repository\bin\Debug\net6.0\Project002Repository.dll
+C:\Users\Tec\source\repos\Project003\Project002Repository\bin\Debug\net6.0\Project002Repository.pdb
+C:\Users\Tec\source\repos\Project003\Project002Repository\obj\Debug\net6.0\Project002Repository.csproj.AssemblyReference.cache
+C:\Users\Tec\source\repos\Project003\Project002Repository\obj\Debug\net6.0\Project002Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tec\source\repos\Project003\Project002Repository\obj\Debug\net6.0\Project002Repository.AssemblyInfoInputs.cache
+C:\Users\Tec\source\repos\Project003\Project002Repository\obj\Debug\net6.0\Project002Repository.AssemblyInfo.cs
+C:\Users\Tec\source\repos\Project003\Project002Repository\obj\Debug\net6.0\Project002Repository.csproj.CoreCompileInputs.cache
+C:\Users\Tec\source\repos\Project003\Project002Repository\obj\Debug\net6.0\Project002Repository.dll
+C:\Users\Tec\source\repos\Project003\Project002Repository\obj\Debug\net6.0\refint\Project002Repository.dll
+C:\Users\Tec\source\repos\Project003\Project002Repository\obj\Debug\net6.0\Project002Repository.pdb
+C:\Users\Tec\source\repos\Project003\Project002Repository\obj\Debug\net6.0\Project002Repository.genruntimeconfig.cache
+C:\Users\Tec\source\repos\Project003\Project002Repository\obj\Debug\net6.0\ref\Project002Repository.dll
