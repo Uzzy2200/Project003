@@ -8,7 +8,7 @@ namespace Project002Repository.Models
 {
     public class Clothes
     {
-        public int ClothingId { get; set; }
+        public int ClothesId { get; set; }
         public string ClothingName { get; set; }
         public string Description { get; set; }
 

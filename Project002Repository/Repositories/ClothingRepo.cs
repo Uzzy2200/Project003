@@ -29,7 +29,7 @@ namespace Project002Repository.Repositories
         }
         public Clothes GetById(int id)
         {
-            return context.Clothes.FirstOrDefault(c => c.ClothingId == id);
+            return context.Clothes.FirstOrDefault(c => c.ClothesId == id);
         }
 
 
@@ -55,7 +55,7 @@ namespace Project002Repository.Repositories
 
         public Clothes Update(Clothes clothes)
         {
-            var existingClothing = context.Clothes.Find(clothes.ClothingId);
+            var existingClothing = context.Clothes.Find(clothes.ClothesId);
             if (existingClothing == null)
             {
                 throw new ArgumentException("Clothes not found");

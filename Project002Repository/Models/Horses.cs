@@ -8,7 +8,7 @@ namespace Project002Repository.Models
 {
     public class Horses
     {
-        public int HorseId { get; set; }
+        public int HorsesId { get; set; }
         public string HorseName { get; set; }
         public string Color { get; set; }
 

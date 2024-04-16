@@ -46,7 +46,7 @@ namespace Project002Repository.Repositories
 
         public Horses GetById(int id)
         {
-            return context.Horses.FirstOrDefault(h => h.HorseId == id);
+            return context.Horses.FirstOrDefault(h => h.HorsesId == id);
         }
 
         public bool Save()
@@ -56,7 +56,7 @@ namespace Project002Repository.Repositories
 
         public Horses Update(Horses horses)
         {
-            var existingHorse = context.Horses.Find(horses.HorseId);
+            var existingHorse = context.Horses.Find(horses.HorsesId);
             if (existingHorse == null)
             {
                 throw new ArgumentException("Horse not found");

@@ -35,7 +35,7 @@ namespace Project002Api.Controllers
         [HttpPut("{id}")]
         public ActionResult<Clothes> Update(int id, Clothes clothes)
         {
-            if (id != clothes.ClothingId)
+            if (id != clothes.ClothesId)
             {
                 return BadRequest("ID in the request path does not match the ID in the provided entity.");
             }
@@ -47,7 +47,7 @@ namespace Project002Api.Controllers
             }
 
             // Ensure that the ID of the provided entity matches the ID in the request path
-            clothes.ClothingId = id;
+            clothes.ClothesId = id;
 
             _clothingRepo.Update(clothes);
             return Ok(clothes);
@@ -59,7 +59,7 @@ namespace Project002Api.Controllers
         public bool Delete(int id)
         {
             // Retrieve the Samurai object from the database using the provided ID
-            Clothes clothesToDelete = _clothingRepo.GetAll().FirstOrDefault(c => c.ClothingId == id);
+            Clothes clothesToDelete = _clothingRepo.GetAll().FirstOrDefault(c => c.ClothesId == id);
 
             if (clothesToDelete == null)
             {
