@@ -10,27 +10,27 @@ using Project002Repository.Migrations;
 
 namespace Project002Repository.Repositories
 {
-    public class CountryRepo : ICountryRepository
+    public class ClanRepo : IClanRepository
     {
         private readonly Dbcontext context;
-        public CountryRepo(Dbcontext data)
+        public ClanRepo(Dbcontext data)
         {
             this.context = data;
         }
-        public Country Create(Country country)
+        public Clan Create(Clan clan)
         {
-            context.Country.Add(country);
+            context.Clan.Add(clan);
             context.SaveChanges();
-            return country;
+            return clan;
         }
 
-        public List<Country> GetAll()
+        public List<Clan> GetAll()
         {
-            return context.Country.ToList();
+            return context.Clan.ToList();
         }
-        public Country GetById(int id)
+        public Clan GetById(int id)
         {
-            return context.Country.FirstOrDefault(c => c.CountryId == id);
+            return context.Clan.FirstOrDefault(c => c.ClanId == id);
         }
 
         public bool Save()
@@ -38,25 +38,25 @@ namespace Project002Repository.Repositories
             throw new NotImplementedException();
         }
 
-        public Country Update(Country country)
+        public Clan Update(Clan clan)
         {
-            var existingCountry = context.Country.Find(country.CountryId);
-            if (existingCountry == null)
+            var existingClan = context.Clan.Find(clan.ClanId);
+            if (existingClan == null)
             {
-                throw new ArgumentException("Country not found");
+                throw new ArgumentException("Clan not found");
             }
 
             // Update properties of the existingSamurai entity except for the ID
-            context.Entry(existingCountry).CurrentValues.SetValues(country);
+            context.Entry(existingClan).CurrentValues.SetValues(clan);
 
             context.SaveChanges();
-            return existingCountry;
+            return existingClan;
         }
-        public bool Delete(Country country)
+        public bool Delete(Clan clan)
         {
             try
             {
-                context.Country.Remove(country);
+                context.Clan.Remove(clan);
                 context.SaveChanges();
                 return true; // Indicate successful deletion
             }

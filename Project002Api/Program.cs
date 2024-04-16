@@ -21,7 +21,7 @@ namespace Project001
             //DI - ACTIVATIONS
             builder.Services.AddScoped<ISamuraiRepository, SamuraiRepo>();
             builder.Services.AddScoped<IWarRepository, WarRepo>();
-            builder.Services.AddScoped<ICountryRepository, CountryRepo>();
+            builder.Services.AddScoped<IClanRepository, ClanRepo>();
             builder.Services.AddScoped<IWeaponRepository, WeaponRepo>();
             builder.Services.AddScoped<IHorseRepository, HorseRepo>();
             builder.Services.AddScoped<IClothingRepository, ClothingRepo>();

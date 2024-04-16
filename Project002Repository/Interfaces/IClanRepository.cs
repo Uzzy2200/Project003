@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Project002Repository.Interfaces
 {
-    public interface ICountryRepository
+    public interface IClanRepository
     {
-        Country Create(Country country);
-        Country Update(Country country);
-        List<Country> GetAll();
-        Country GetById(int id);
-        bool Delete(Country country);
+        Clan Create(Clan clan);
+        Clan Update(Clan clan);
+        List<Clan> GetAll();
+        Clan GetById(int id);
+        bool Delete(Clan clan);
         bool Save();
     }
 }

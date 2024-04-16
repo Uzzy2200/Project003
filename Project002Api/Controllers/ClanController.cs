@@ -10,27 +10,27 @@ namespace Project002Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CountryController : ControllerBase
+    public class ClanController : ControllerBase
     {
 
-            private readonly ICountryRepository _countryRepo;
+            private readonly IClanRepository _clanRepo;
 
-            public CountryController(ICountryRepository countryRepo)
+            public ClanController(IClanRepository clanRepo)
             {
-                _countryRepo = countryRepo;
+                _clanRepo = clanRepo;
             }
 
             // GET: api/<CountryController>
             [HttpGet]
-        public IEnumerable<Country> GetAll()
+        public IEnumerable<Clan> GetAll()
         {
-            var result = _countryRepo.GetAll();
+            var result = _clanRepo.GetAll();
             return result;
         }
         [HttpPost]
-        public void Create(Country country)
+        public void Create(Clan clan)
         {
-            _countryRepo.Create(country);
+            _clanRepo.Create(clan);
         }
 
   
@@ -40,48 +40,48 @@ namespace Project002Api.Controllers
         public bool Delete(int id)
         {
             // Retrieve the Samurai object from the database using the provided ID
-            Country countryToDelete = _countryRepo.GetAll().FirstOrDefault(c => c.CountryId == id);
+            Clan clanToDelete = _clanRepo.GetAll().FirstOrDefault(c => c.ClanId == id);
 
-            if (countryToDelete == null)
+            if (clanToDelete == null)
             {
                 // Return false or handle the case where the Samurai object with the provided ID doesn't exist
                 return false;
             }
 
             // Call the Delete method in your repository to delete the Samurai object
-            return _countryRepo.Delete(countryToDelete);
+            return _clanRepo.Delete(clanToDelete);
         }
         [HttpPut("{id}")]
-        public ActionResult<Country> Update(int id, Country country)
+        public ActionResult<Clan> Update(int id, Clan clan)
         {
-            if (id != country.CountryId)
+            if (id != clan.ClanId)
             {
                 return BadRequest("ID in the request path does not match the ID in the provided entity.");
             }
 
-            var existingCountry = _countryRepo.GetById(id);
-            if (existingCountry == null)
+            var existingClan = _clanRepo.GetById(id);
+            if (existingClan == null)
             {
                 return NotFound();
             }
 
             // Ensure that the ID of the provided entity matches the ID in the request path
-            country.CountryId = id;
+            clan.ClanId = id;
 
-            _countryRepo.Update(country);
-            return Ok(country);
+            _clanRepo.Update(clan);
+            return Ok(clan);
         }
 
 
         [HttpGet("{id}")]
-        public ActionResult<Country> GetById(int id)
+        public ActionResult<Clan> GetById(int id)
         {
-            var country = _countryRepo.GetById(id);
-            if (country == null)
+            var clan = _clanRepo.GetById(id);
+            if (clan == null)
             {
                 return NotFound();
             }
-            return country;
+            return clan;
         }
 
     }

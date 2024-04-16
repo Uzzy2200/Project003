@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Project002Repository.Models
 {
-    public class Country
+    public class Clan
     {
-        public int CountryId { get; set; }
-        public string CountryName { get; set; }
+        public int ClanId { get; set; }
+        public string ClanName { get; set; }
 
     }
 }
