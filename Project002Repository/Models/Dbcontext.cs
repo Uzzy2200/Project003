@@ -26,6 +26,7 @@ namespace Project002.Repository.Models
         public DbSet<Country> Country { get; set; }
         public DbSet<Weapon> Weapon { get; set; }
         public DbSet<Horses> Horses { get; set; }
+        public DbSet<Clothes> Clothes { get; set; }
 
     }
 }

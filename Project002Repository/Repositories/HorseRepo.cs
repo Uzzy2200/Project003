@@ -1,5 +1,6 @@
 ﻿using Project002.Repository.Models;
 using Project002Repository.Interfaces;
+using Project002Repository.Migrations;
 using Project002Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -18,22 +19,34 @@ namespace Project002Repository.Repositories
         }
         public Horses Create(Horses horses)
         {
-            throw new NotImplementedException();
+            context.Horses.Add(horses);
+            context.SaveChanges();
+            return horses;
         }
 
         public bool Delete(Horses horses)
         {
-            throw new NotImplementedException();
+            try
+            {
+                context.Horses.Remove(horses);
+                context.SaveChanges();
+                return true; // Indicate successful deletion
+            }
+            catch (Exception ex)
+            {
+                // Handle exception or log error
+                return false; // Indicate deletion failure
+            }
         }
 
         public List<Horses> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Horses.ToList();
         }
 
         public Horses GetById(int id)
         {
-            throw new NotImplementedException();
+            return context.Horses.FirstOrDefault(h => h.HorseId == id);
         }
 
         public bool Save()
@@ -41,9 +54,19 @@ namespace Project002Repository.Repositories
             throw new NotImplementedException();
         }
 
-        public Horses Update(Horses country)
+        public Horses Update(Horses horses)
         {
-            throw new NotImplementedException();
+            var existingHorse = context.Horses.Find(horses.HorseId);
+            if (existingHorse == null)
+            {
+                throw new ArgumentException("Horse not found");
+            }
+
+            // Update properties of the existingSamurai entity except for the ID
+            context.Entry(existingHorse).CurrentValues.SetValues(horses);
+
+            context.SaveChanges();
+            return existingHorse;
         }
     }
 }

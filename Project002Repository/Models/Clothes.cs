@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Project002Repository.Models
 {
-    internal class Clothes
+    public class Clothes
     {
+        public int ClothingId { get; set; }
+        public string ClothingName { get; set; }
+        public string Description { get; set; }
+
+
+
     }
 }
